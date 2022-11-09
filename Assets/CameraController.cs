@@ -9,6 +9,8 @@ public class CameraController : MonoBehaviour
     Vector3 target;
     float timeToReachTarget = 20f;
     GameObject player;
+    public float yOffset = -5f;
+    public bool isSafe = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
 
-        transform.position = new Vector3(transform.position.x,player.transform.position.y,transform.position.z);
+        transform.position = new Vector3(transform.position.x,player.transform.position.y+yOffset,transform.position.z);
 
     }
 }
